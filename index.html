@@ -7,6 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="container"></div>
 </body>
 </html>
+
+<script src="this.js"></script>
+
+<script>
+    var container = document.getElementById('container');
+
+    var data = [
+        {
+            title: '测试this',
+            action: myThis
+        },
+    ];
+
+    for (var i = 0; i < data.length; i++) {
+        (function(index) {
+            var newDiv = document.createElement('button');
+        
+            newDiv.innerHTML = data[index].title;
+            
+            container.appendChild(newDiv);
+
+            newDiv.onclick = function() {
+                data[index].action && data[index].action();
+            };
+        })(i)
+    }
+</script>
+<style>
+    #container button {
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
