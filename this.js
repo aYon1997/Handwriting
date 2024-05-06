@@ -34,7 +34,9 @@ function myThis () {
 
         // 核心实现
         obj['fn'] = this;
-        let result = obj['fn'](list);
+
+        // 这里修正一个点,apply是会展开list的,这内部和call一模一样
+        let result = obj['fn'](...list);
         delete obj['fn'];
 
         return result;

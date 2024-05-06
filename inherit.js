@@ -1,5 +1,6 @@
 function myInHerit () {
 
+    // 原型继承
     function prototypeInHerit () {
         let son = function () {};
         let father = function  ()  {
@@ -27,6 +28,7 @@ function myInHerit () {
     prototypeInHerit();
 
 
+    // 构造函数继承
     function nweFnInHerit () {
         let father = function(name) {
             this.name = name;
@@ -45,6 +47,7 @@ function myInHerit () {
     nweFnInHerit();
 
 
+    // 组合继承
     function combinationInHerit () {
         function son() {
             father.call(this);
@@ -64,7 +67,7 @@ function myInHerit () {
     };
     combinationInHerit();
 
-
+    // 组合派生式继承
     function combinedParasitism () {
         function son() {
             father.call(this);
@@ -86,6 +89,7 @@ function myInHerit () {
     combinedParasitism();
 
 
+    // class继承
     function classInherit () {
         class father {
             constructor(name) {
